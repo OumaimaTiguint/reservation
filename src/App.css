@@ -1,38 +1,94 @@
+body {
+  background-color: #e8e8e8;
+}
 .App {
   text-align: center;
+  margin: auto;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "h2 h2" 
+  "cal time";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  grid-area: h2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cal {
+  grid-area: cal;
+  border-radius: 20px;
+  width: 40%;
+  height: 350px;
+  margin: 10px auto;
+  color: #9ad3bc;
+  background-color: #f6f5f5;
+  border: 1px solid #f6f5f1;
+  box-shadow: 5px 10px 10px #888888;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cal button {
+  border-radius: 50%;
+}
+
+.cal button:active {
+  border-radius: 50%;
+  background-color: black;
+}
+
+.time {
+  grid-area: time;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.am {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+  overflow-x: auto;
+  flex-flow: wrap;
+}
+
+.pm {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  flex-flow: wrap;
+}
+
+button {
+  color: #9ad3bc;
+  font-weight: bold;
+  border: 2px solid #9ad3bc;
+  border-radius: 10px;
+  margin: 5px;
+  width: 100px;
+  padding: 10px;
+  outline: none
+}
+button:active {
+  background-color: #9ad3bc;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 425px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    padding: 10px
   }
-  to {
-    transform: rotate(360deg);
+  .cal {
+    width: 80%
+  }
+  .time-slot {
+    margin: 5px;
+    width: 70px;
+    padding: 10px
+  }
+  .time {
+    width:90%;
+    margin: auto
   }
 }
